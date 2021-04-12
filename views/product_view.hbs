@@ -24,7 +24,7 @@
                 <tr>
                     <td>{{ id }}</td>
                     <td>{{ name }}</td>
-                    <td>{{ price }}</td>
+                    <td class="row_data">{{ price }}</td>
                     <td>
                         <a href="javascript:void(0);" class="btn btn-sm btn-info edit" data-id="{{ id }}"
                             data-name="{{ name }}" data-price="{{ price }}">Edit</a>
@@ -54,7 +54,8 @@
                         </div>
 
                         <div class="form-group">
-                            <input type="text" name="price" class="form-control" placeholder="Price" required>
+                            <input type="text" name="price" class="form-control" placeholder="Price" required
+                                id="CurrencyInput">
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -143,6 +144,10 @@
                 $('.product_id2').val(product_id);
             });
 
+        });
+        let cells = Array.prototype.slice.call(document.querySelectorAll(".row_data"));
+        cells.forEach(function (cell) {
+            cell.textContent = (+cell.textContent).toLocaleString('id-ID', { style: 'currency', currency: 'IDR' });
         });
     </script>
 </body>
