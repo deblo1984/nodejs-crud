@@ -2,11 +2,13 @@ const path = require('path');
 const express = require('express');
 const hbs = require('hbs');
 const dotenv = require('dotenv');
-const { Pool } = require('pg');
+const morgan = require('morgan');
 
 dotenv.config();
 
 const app = express();
+
+app.use(morgan('dev'))
 
 //products controller
 const product = require('./controllers/product.controller')
@@ -21,7 +23,6 @@ app.use('/assets', express.static(__dirname + '/public'));
 app.get('/', product.get);
 app.post('/save', product.create);
 app.post('/delete', product.delete);
-
 app.post('/update', product.update);
 
 app.listen(5000, () => {

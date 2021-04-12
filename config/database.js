@@ -12,7 +12,11 @@ pool.on('connect', () => {
     console.log('pool started')
 })
 
-pool.on('destroy', () => {
+pool.on('error', () => {
+    console.log('pool error')
+})
+
+pool.on('remove', () => {
     console.log('pool destroy');
 })
 
