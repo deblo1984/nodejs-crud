@@ -8,10 +8,10 @@ dotenv.config();
 
 const app = express();
 
-app.use(morgan('dev'))
+app.use(morgan('dev'));
 
 //products controller
-const product = require('./controllers/product.controller')
+const product = require('./controllers/product.controller');
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
@@ -26,6 +26,6 @@ app.post('/delete', product.delete);
 app.post('/update', product.update);
 
 app.listen(5000, () => {
-    console.log('server is running at port 5000')
+    console.log('server is running at port 5000');
 })
 
