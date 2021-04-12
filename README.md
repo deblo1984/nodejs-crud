@@ -7,11 +7,13 @@ using handlebars as templating engine
 
 this crud app demonstrate postgres database connection using pooling
 
-create .env file
-DATABASE_HOST = {your database host}
-DATABASE_USER = {your database user}
-DATABASE_PASSWORD = {database password}
-DATABASE_NAME = {database name}
-DATABASE_PORT = 5432 => default postgres port
+<ul>
+  <li>create .env file</li>
+
+<li>DATABASE_HOST = {your database host}</li>
+<li>DATABASE_USER = {your database user}</li>
+<li>DATABASE_PASSWORD = {database password}</li>
+<li>DATABASE_NAME = {database name}</li>
+<li>DATABASE_PORT = 5432 => default postgres port</li>
 
 
