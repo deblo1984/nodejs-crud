@@ -7,13 +7,13 @@ const pool = new Pool({
     password: process.env.DATABASE_PASSWORD,
 });
 
-/*pool.on('connect', () => {
+pool.on('connect', () => {
     console.log('pool started')
 })
 
 pool.on('remove', () => {
     console.log('pool destroy');
-})*/
+})
 
 module.exports = {
     query: (text, params) => pool.query(text, params),
